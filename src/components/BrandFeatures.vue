@@ -70,7 +70,7 @@ h4 {
   }
 
   h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   p {

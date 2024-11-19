@@ -6,13 +6,7 @@
       <div class="flex-container px-1">
         <!-- Image Gallery -->
         <div class="image-gallery">
-          <button
-            class="arrow left-arrow"
-            @click="prevImage"
-            :disabled="!imageLoaded"
-          >
-            &#10094;
-          </button>
+          <button class="arrow left-arrow" @click="prevImage">&#10094;</button>
           <!-- Arrows disabled if images aren't loaded (maintains fixed position with spinner loader) -->
 
           <div class="image-slider">
@@ -24,18 +18,11 @@
                 :key="img"
                 :src="img"
                 alt="Product image"
-                @load="imageLoaded = true"
               />
             </div>
           </div>
 
-          <button
-            class="arrow right-arrow"
-            @click="nextImage"
-            :disabled="!imageLoaded"
-          >
-            &#10095;
-          </button>
+          <button class="arrow right-arrow" @click="nextImage">&#10095;</button>
         </div>
 
         <!-- Product Info -->
@@ -81,13 +68,11 @@
 <script setup>
 import { ref, onMounted, watch, computed } from 'vue';
 import { useRoute } from 'vue-router';
-import SpinnerLoader from '../components/SpinnerLoader.vue';
 import productsData from '../data/data.json';
 
 const route = useRoute();
 const product = ref(null);
 const currentImageIndex = ref(0);
-const imageLoaded = ref(false);
 
 watch(
   () => route.params.id,
@@ -272,7 +257,7 @@ h1 {
   h1 {
     font-size: 1.9rem;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-weight: 500;
   }
   .flex-container.px-1 {
