@@ -33,7 +33,7 @@ header {
   align-items: center;
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-    url('../public/img/hero-img.png') no-repeat 107% 55% / 55%;
+    url('@/assets/img/hero-img.png') no-repeat 107% 55% / 55%;
 }
 
 h1 {
@@ -101,7 +101,7 @@ h3 .text-highlight {
 @media screen and (max-width: 1024px) {
   .header {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-      url('../public/img/hero-img.png') no-repeat 10px 220px / 150%;
+      url('@/assets/img/hero-img.png') no-repeat 10px 220px / 150%;
 
     /* DARK MODE */
     /* background: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)),
@@ -128,7 +128,7 @@ h3 .text-highlight {
 @media screen and (max-width: 767px) {
   .header {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-      url('../public/img/hero-img.png') no-repeat 50% 340px / 200%;
+      url('@/assets/img/hero-img.png') no-repeat 50% 340px / 200%;
   }
   .container {
     /* text-align: center; */
