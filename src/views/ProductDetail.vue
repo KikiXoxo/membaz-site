@@ -66,54 +66,27 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed, nextTick } from 'vue';
+import { ref, onMounted, watch, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import productsData from '../data/data.json';
 
 const route = useRoute();
 const product = ref(null);
 const currentImageIndex = ref(0);
-const observer = ref(null);
 
 onMounted(() => {
   window.scrollTo(0, 0); // Reset scroll position
-  initializeImageObserver(); // Set up the observer for lazy-loading images
 });
 
 watch(
   () => route.params.id,
-  async () => {
+  () => {
     const productId = Number(route.params.id);
     product.value = productsData.find(item => item.id === productId);
     currentImageIndex.value = 0; // Reset to the first image on product change
-
-    await nextTick(); // Wait for the DOM to update
-    initializeImageObserver(); // Reinitialize observer for the new images
   },
-  { immediate: true }
+  { immediate: true } // Ensures the watch runs immediately on mounted (immediately the component is first created and id is available). This is VERY important. So it doesn't matter that id doesn't ever change. We already forcefully triggered watch() once to update product.value, which is the only time we need it
 );
-
-const initializeImageObserver = () => {
-  if (observer.value) {
-    observer.value.disconnect(); // Clean up any previous observers
-  }
-
-  observer.value = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        if (!img.complete || img.naturalWidth === 0) {
-          img.src = img.src; // Force reload if the image is incomplete
-        }
-      }
-    });
-  });
-
-  const images = document.querySelectorAll('.img-container img');
-  images.forEach(img => {
-    observer.value.observe(img);
-  });
-};
 
 // Navigation functions
 const nextImage = () => {
