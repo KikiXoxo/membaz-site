@@ -66,7 +66,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed } from 'vue';
+import { ref, watch, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import productsData from '../data/data.json';
 
@@ -74,56 +74,44 @@ const route = useRoute();
 const product = ref(null);
 const currentImageIndex = ref(0);
 
-const imagesLoaded = ref(false);
-
-const checkImagesLoaded = () => {
-  const promises = product.value.imgs.map(img => {
-    return new Promise(resolve => {
-      const image = new Image();
-      image.src = img;
-      image.onload = resolve;
-      image.onerror = resolve; // Resolve even if there's an error to prevent infinite loading
-    });
-  });
-
-  Promise.all(promises).then(() => {
-    imagesLoaded.value = true;
-  });
-};
-
+// Watch for route ID changes and force re-execution after 1 second
 watch(
   () => route.params.id,
   () => {
-    const productId = Number(route.params.id);
-    product.value = productsData.find(item => item.id === productId);
-    currentImageIndex.value = 0; // Reset to the first image on product change
+    updateProduct();
+
+    // Force re-execution after 1 second if the product isn't loaded
+    setTimeout(() => {
+      updateProduct();
+    }, 1000);
   },
-  { immediate: true } // Ensures the watch runs immediately on mounted (immediately the component is first created and id is available). This is VERY important. So it doesn't matter that id doesn't ever change. We already forcefully triggered watch() once to update product.value, which is the only time we need it
+  { immediate: true } // Ensures the logic runs on component mount
 );
 
-onMounted(() => {
+// Function to update product based on route ID
+function updateProduct() {
   const productId = Number(route.params.id);
   product.value = productsData.find(item => item.id === productId);
-  checkImagesLoaded();
-});
+  currentImageIndex.value = 0; // Reset to the first image when the product changes
+}
 
 // Navigation functions
 const nextImage = () => {
-  if (product.value.imgs.length > 1) {
+  if (product.value?.imgs?.length > 1) {
     currentImageIndex.value =
       (currentImageIndex.value + 1) % product.value.imgs.length;
   }
 };
 
 const prevImage = () => {
-  if (product.value.imgs.length > 1) {
+  if (product.value?.imgs?.length > 1) {
     currentImageIndex.value =
       (currentImageIndex.value - 1 + product.value.imgs.length) %
       product.value.imgs.length;
   }
 };
 
-// Slider style
+// Slider style for image transitions
 const sliderStyle = computed(() => {
   return {
     transform: `translateX(-${currentImageIndex.value * 100}%)`,
