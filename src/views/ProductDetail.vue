@@ -16,7 +16,7 @@
               <img
                 v-for="img in product.imgs"
                 :key="img"
-                :src="`${img}?t=${Date.now()}`"
+                :src="img"
                 alt="Product image"
               />
             </div>
@@ -73,6 +73,10 @@ import productsData from '../data/data.json';
 const route = useRoute();
 const product = ref(null);
 const currentImageIndex = ref(0);
+
+onMounted(() => {
+  window.scrollTo(0, 0); // Reset scroll position
+});
 
 watch(
   () => route.params.id,
