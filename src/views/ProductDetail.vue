@@ -74,6 +74,23 @@ const route = useRoute();
 const product = ref(null);
 const currentImageIndex = ref(0);
 
+const imagesLoaded = ref(false);
+
+const checkImagesLoaded = () => {
+  const promises = product.value.imgs.map(img => {
+    return new Promise(resolve => {
+      const image = new Image();
+      image.src = img;
+      image.onload = resolve;
+      image.onerror = resolve; // Resolve even if there's an error to prevent infinite loading
+    });
+  });
+
+  Promise.all(promises).then(() => {
+    imagesLoaded.value = true;
+  });
+};
+
 watch(
   () => route.params.id,
   () => {
@@ -83,6 +100,12 @@ watch(
   },
   { immediate: true } // Ensures the watch runs immediately on mounted (immediately the component is first created and id is available). This is VERY important. So it doesn't matter that id doesn't ever change. We already forcefully triggered watch() once to update product.value, which is the only time we need it
 );
+
+onMounted(() => {
+  const productId = Number(route.params.id);
+  product.value = productsData.find(item => item.id === productId);
+  checkImagesLoaded();
+});
 
 // Navigation functions
 const nextImage = () => {
