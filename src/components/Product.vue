@@ -19,7 +19,6 @@
 
       <button class="btn-primary flex-icons-text">
         <i-mdi-cart />
-        <!-- <i-mdi-cart-outline /> -->
         <span class="shop-now">SHOP NOW</span>
       </button>
     </div>
@@ -108,6 +107,7 @@ button {
 
 .spinner {
   margin-top: 40%;
+  margin-left: 50%;
 }
 
 /* LIGHT MODE */
