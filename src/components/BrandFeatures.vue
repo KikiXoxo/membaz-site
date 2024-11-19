@@ -68,5 +68,9 @@ h4 {
     height: 40px;
     width: 40px;
   }
+
+  h4 {
+    font-size: 1.1rem;
+  }
 }
 </style>

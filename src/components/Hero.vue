@@ -32,7 +32,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: white;
+  background-color: white !important;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     url('@/assets/img/hero-img.PNG') no-repeat 107% 55% / 55%;
 }
@@ -132,7 +132,7 @@ h3 .text-highlight {
   }
   .header {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-      url('@/assets/img/hero-img.PNG') no-repeat 50% 340px / 200%;
+      url('@/assets/img/hero-img.PNG') no-repeat 50% 320px / 200%;
   }
   .container {
     /* text-align: center; */
