@@ -72,5 +72,9 @@ h4 {
   h4 {
     font-size: 1.1rem;
   }
+
+  p {
+    font-size: 0.9rem;
+  }
 }
 </style>

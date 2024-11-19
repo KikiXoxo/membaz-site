@@ -25,7 +25,6 @@
                 :src="img"
                 alt="Product image"
                 @load="imageLoaded = true"
-                :class="{ hidden: !imageLoaded }"
               />
             </div>
           </div>

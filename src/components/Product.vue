@@ -169,11 +169,11 @@ button {
   }
 
   h3 {
-    font-size: 0.95rem;
+    font-size: 1rem;
     /* font-weight: 400; */
     line-height: 1.1;
     /* text-transform: capitalize; */
-    height: 2.7rem;
+    height: 2.6rem;
   }
 
   .img-container {

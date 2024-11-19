@@ -142,15 +142,23 @@ h3 .text-highlight {
     /* align-items: center; */
   }
   h1 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     /* font-weight: 600; */
     line-height: 1.1;
   }
 
   h1 .text-highlight {
-    font-size: 3.3rem;
+    font-size: 3rem;
     display: block;
     /* margin-top: 0.25rem; */
+  }
+
+  h3 {
+    font-size: 1.2;
+  }
+
+  h3 .text-highlight {
+    font-size: 1.4rem;
   }
 
   .btn.btn-primary {
