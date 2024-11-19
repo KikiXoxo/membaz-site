@@ -66,7 +66,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed, nextTick } from 'vue';
+import { ref, onMounted, onUnmounted, watch, computed, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
 import productsData from '../data/data.json';
 
@@ -77,30 +77,30 @@ const currentImageIndex = ref(0);
 onMounted(() => {
   window.scrollTo(0, 0); // Reset scroll position
 
-  // Add event listener for scroll
-  window.addEventListener('scroll', handleScroll);
+  // Force image loading on initial mount
+  forceImagesToLoad();
 });
 
 watch(
   () => route.params.id,
-  () => {
+  async () => {
     const productId = Number(route.params.id);
     product.value = productsData.find(item => item.id === productId);
     currentImageIndex.value = 0; // Reset to the first image on product change
+
+    await nextTick(); // Wait for the DOM to update
+    forceImagesToLoad(); // Ensure all images are reloaded after product change
   },
-  { immediate: true } // Ensures the watch runs immediately on mounted (immediately the component is first created and id is available). This is VERY important. So it doesn't matter that id doesn't ever change. We already forcefully triggered watch() once to update product.value, which is the only time we need it
+  { immediate: true }
 );
 
-// Scroll handler function
-const handleScroll = () => {
-  // Trigger nextTick to ensure DOM updates properly
-  nextTick(() => {
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-      if (!img.complete) {
-        img.src = img.src; // Force image reload
-      }
-    });
+// Force reloading of images to handle rendering issues in certain browsers
+const forceImagesToLoad = () => {
+  const images = document.querySelectorAll('.img-container img');
+  images.forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+      img.src = img.src; // Force the browser to reload the image
+    }
   });
 };
 
