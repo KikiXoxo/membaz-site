@@ -77,26 +77,10 @@ const currentImageIndex = ref(0);
 onMounted(() => {
   window.scrollTo(0, 0); // Reset scroll position
 
-  // Add visibilitychange listener to detect when the tab becomes visible
-  document.addEventListener('visibilitychange', handleVisibilityChange);
+  // Add event listener for scroll
+  window.addEventListener('scroll', handleScroll);
 });
 
-// This function will be called when the tab becomes visible again
-const handleVisibilityChange = () => {
-  if (document.visibilityState === 'visible') {
-    nextTick(() => {
-      // Trigger a reflow or recheck images, or any other refresh logic
-      console.log('Tab is visible again. Re-checking images...');
-      // Here you could refresh or trigger image load again.
-      // For example, we could update `product` value to trigger re-render
-      const productId = Number(route.params.id);
-      product.value = productsData.find(item => item.id === productId);
-      currentImageIndex.value = 0; // Reset to the first image
-    });
-  }
-};
-
-// Watch for changes in the route (product ID change)
 watch(
   () => route.params.id,
   () => {
@@ -104,8 +88,21 @@ watch(
     product.value = productsData.find(item => item.id === productId);
     currentImageIndex.value = 0; // Reset to the first image on product change
   },
-  { immediate: true }
+  { immediate: true } // Ensures the watch runs immediately on mounted (immediately the component is first created and id is available). This is VERY important. So it doesn't matter that id doesn't ever change. We already forcefully triggered watch() once to update product.value, which is the only time we need it
 );
+
+// Scroll handler function
+const handleScroll = () => {
+  // Trigger nextTick to ensure DOM updates properly
+  nextTick(() => {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      if (!img.complete) {
+        img.src = img.src; // Force image reload
+      }
+    });
+  });
+};
 
 // Navigation functions
 const nextImage = () => {
