@@ -7,12 +7,9 @@
         <!-- Image Gallery -->
         <div class="image-gallery">
           <button class="arrow left-arrow" @click="prevImage">&#10094;</button>
-          <!-- Arrows disabled if images aren't loaded (maintains fixed position with spinner loader) -->
 
           <div class="image-slider">
             <div class="img-container" :style="sliderStyle">
-              <!-- <SpinnerLoader :class="{ hidden: imageLoaded }" /> -->
-
               <img
                 v-for="img in product.imgs"
                 :key="img"
@@ -85,7 +82,7 @@ watch(
     product.value = productsData.find(item => item.id === productId);
     currentImageIndex.value = 0; // Reset to the first image on product change
   },
-  { immediate: true } // Ensures the watch runs immediately on mounted (immediately the component is first created and id is available). This is VERY important. So it doesn't matter that id doesn't ever change. We already forcefully triggered watch() once to update product.value, which is the only time we need it
+  { immediate: true } // Ensures the watch runs immediately on mounted (immediately the component is first created and id is available)
 );
 
 // Navigation functions

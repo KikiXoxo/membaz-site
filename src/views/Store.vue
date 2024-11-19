@@ -102,6 +102,8 @@ onMounted(() => {
   if (route.params.category) {
     currentCategory.value = route.params.category;
   }
+
+  window.scrollTo(0, 0); // Reset scroll position to top
 });
 
 watch(route, newRoute => {
