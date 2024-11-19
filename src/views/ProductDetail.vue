@@ -66,19 +66,18 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch, computed, nextTick } from 'vue';
+import { ref, onMounted, watch, computed, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
 import productsData from '../data/data.json';
 
 const route = useRoute();
 const product = ref(null);
 const currentImageIndex = ref(0);
+const observer = ref(null);
 
 onMounted(() => {
   window.scrollTo(0, 0); // Reset scroll position
-
-  // Force image loading on initial mount
-  forceImagesToLoad();
+  initializeImageObserver(); // Set up the observer for lazy-loading images
 });
 
 watch(
@@ -89,18 +88,30 @@ watch(
     currentImageIndex.value = 0; // Reset to the first image on product change
 
     await nextTick(); // Wait for the DOM to update
-    forceImagesToLoad(); // Ensure all images are reloaded after product change
+    initializeImageObserver(); // Reinitialize observer for the new images
   },
   { immediate: true }
 );
 
-// Force reloading of images to handle rendering issues in certain browsers
-const forceImagesToLoad = () => {
+const initializeImageObserver = () => {
+  if (observer.value) {
+    observer.value.disconnect(); // Clean up any previous observers
+  }
+
+  observer.value = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (!img.complete || img.naturalWidth === 0) {
+          img.src = img.src; // Force reload if the image is incomplete
+        }
+      }
+    });
+  });
+
   const images = document.querySelectorAll('.img-container img');
   images.forEach(img => {
-    if (!img.complete || img.naturalWidth === 0) {
-      img.src = img.src; // Force the browser to reload the image
-    }
+    observer.value.observe(img);
   });
 };
 
