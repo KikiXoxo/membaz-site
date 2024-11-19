@@ -155,11 +155,8 @@ const goToProduct = productId => {
   padding: 4rem 0;
 }
 .products {
-  /* padding: 0 3rem; */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* gap: 0.75rem 3rem; */
-
   gap: 1.5rem;
 }
 
