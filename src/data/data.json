@@ -1,0 +1,176 @@
+[
+  {
+    "id": 1,
+    "name": "MEMBAZ Jersey",
+    "description": "Elevate your game with our exclusive branded jersey top, designed for peak performance and style. Crafted from high-quality, breathable fabric, this jersey ensures comfort and durability whether you're on the field or cheering from the stands. Featuring a sleek design with vibrant colors that won't fade, our jersey is a testament to both your team spirit and your commitment to quality. Complete with a signature elastic band for a snug fit, it's the perfect addition to any fan's collection.",
+    "price": "₦100,000",
+    "colors": ["Light Blue", "Orange", "Red", "Green"],
+    "style": "Soft Cotton",
+    "design": "MEMBAZ Classic Graphics",
+    "detail": "Strips with well padded neck",
+    "size": ["L", "XL"],
+    "imgs": [
+      "/img/jersey/cover-football-jersey-V1-01.jpg",
+      "/img/jersey/football-jersey-v2-01.jpg",
+      "/img/jersey/football-jersey-v3-01.jpg",
+      "/img/jersey/football-jersey-v4-01.jpg"
+    ],
+    "category": "jerseys"
+  },
+  {
+    "id": 2,
+    "name": "MEMBAZ Ibadan Continuity Jersey",
+    "description": "Elevate your game with our exclusive branded jersey top, designed for peak performance and style. Crafted from high-quality, breathable fabric, this jersey ensures comfort and durability whether you're on the field or cheering from the stands. Featuring a sleek design with vibrant colors that won't fade, our jersey is a testament to both your team spirit and your commitment to quality. Complete with a signature elastic band for a snug fit, it's the perfect addition to any fan's collection.",
+    "price": "₦100,000",
+    "colors": ["Black"],
+    "style": "Soft Cotton",
+    "design": "MEMBAZ Classic Graphics",
+    "detail": "Strips with well padded neck",
+    "size": ["L", "XL"],
+    "imgs": [
+      "/img/ibadan-continuity-jersey/cover-collar-jersey.jpg",
+      "/img/ibadan-continuity-jersey/jersey-pack.jpg"
+    ],
+    "category": "jerseys"
+  },
+  {
+    "id": 3,
+    "name": "MEMBAZ Heads in the Cloud (Front) Tee",
+    "description": "Slip into a cloud of comfort and make a bold statement with our vibrant, eye-catching prints that speak to your unique style. This shirt isn't just a piece of clothing, it's a companion for your adventures, ready to collect stories and memories.",
+    "price": "₦70,000",
+    "colors": ["Black", "White"],
+    "style": "Basic T-Shirt",
+    "design": "Heads in the Cloud Graphics (Front)",
+    "detail": "Oversized Short Sleeve",
+    "size": ["M", "L", "XL"],
+    "imgs": [
+      "/img/heads-in-the-cloud-front/blacktee-m.jpg",
+      "/img/heads-in-the-cloud-front/whitetee-m.jpg"
+    ],
+    "category": "shirts"
+  },
+  {
+    "id": 4,
+    "name": "MEMBAZ Crew + Heads in the Cloud (Back) Tee",
+    "description": "Slip into a cloud of comfort and make a bold statement with our vibrant, eye-catching prints that speak to your unique style. This shirt isn't just a piece of clothing, it's a companion for your adventures, ready to collect stories and memories.",
+    "price": "₦50,000",
+    "colors": ["Black", "White"],
+    "style": "Basic T-Shirt",
+    "design": "Heads in the Cloud Graphics (Back)",
+    "detail": "Oversized Short Sleeve",
+    "size": ["M", "L", "XL"],
+    "imgs": [
+      "/img/heads-in-the-cloud-back-crew/black-tee-mockup.jpg",
+      "/img/heads-in-the-cloud-back-crew/white-tee-mockup-2.jpg"
+    ],
+    "category": "shirts"
+  },
+  {
+    "id": 5,
+    "name": "MEMBAZ Unity + Heads in the Cloud (Back) Tee",
+    "description": "Slip into a cloud of comfort and make a bold statement with our vibrant, eye-catching prints that speak to your unique style. This shirt isn't just a piece of clothing, it's a companion for your adventures, ready to collect stories and memories.",
+    "price": "₦70,000",
+    "colors": ["Black", "White"],
+    "style": "Basic T-Shirt",
+    "design": "Heads in the Cloud Graphics (Back)",
+    "detail": "Oversized Short Sleeve",
+    "size": ["M", "L", "XL"],
+    "imgs": [
+      "/img/heads-in-the-cloud-back-unity/newblackmkup.jpg",
+      "/img/heads-in-the-cloud-back-unity/newwhitemkup.jpg"
+    ],
+    "category": "shirts"
+  },
+  {
+    "id": 6,
+    "name": "MEMBAZ For-MEMBAZ-Only Tee",
+    "description": "Slip into a cloud of comfort and make a bold statement with our vibrant, eye-catching prints that speak to your unique style. This shirt isn't just a piece of clothing, it's a companion for your adventures, ready to collect stories and memories.",
+    "price": "₦70,000",
+    "colors": ["Black", "Red"],
+    "style": "Basic T-Shirt",
+    "design": "For MEMBAZ Only Graphics",
+    "detail": "Oversized Short Sleeve",
+    "size": ["M", "L", "XL"],
+    "imgs": ["/img/for-membaz-only/black.jpg", "/img/for-membaz-only/red.jpg"],
+    "category": "shirts"
+  },
+  {
+    "id": 7,
+    "name": "MEMBAZ Anime-Inspired Tee",
+    "description": "Slip into a cloud of comfort and make a bold statement with our vibrant, eye-catching prints that speak to your unique style. This shirt isn't just a piece of clothing, it's a companion for your adventures, ready to collect stories and memories.",
+    "price": "₦50,000",
+    "colors": ["Black", "Red", "Blue", "Acid wash"],
+    "style": "Basic T-Shirt",
+    "design": "Anime-Inspired Graphics",
+    "detail": "Oversized Short Sleeve",
+    "size": ["M", "L", "XL"],
+    "imgs": [
+      "/img/anime-tee/acid-wash-black.jpg",
+      "/img/anime-tee/blue-hime.jpg",
+      "/img/anime-tee/red-hime.jpg"
+    ],
+    "category": "shirts"
+  },
+  {
+    "id": 8,
+    "name": "MEMBAZ Long Sleeve Tee",
+    "description": "Wrap your arms in the cozy embrace of our premium long sleeve! It's like a hug from a cloud — only better, because it's stylish too. Crafted from the whispers of a thousand cotton balls, this shirt promises to be your wardrobe's new best friend. Whether you're braving a breezy boardroom or just chilling on a casual Friday, it's the perfect companion. And with its ability to make you look effortlessly chic, it's practically a superhero in shirt form!",
+    "price": "₦35,000",
+    "colors": ["White"],
+    "style": "Regular Long Sleeve Tee",
+    "design": "MEMBAZ across arms",
+    "detail": "",
+    "size": ["M", "L", "XL"],
+    "imgs": ["/img/long-sleeve/long-sleeve-01-01.jpg"],
+    "category": "shirts"
+  },
+  {
+    "id": 9,
+    "name": "MEMBAZ Cap",
+    "description": "MEMBAZ trucker hats, known for their distinctive design featuring a foam front panel perfect for custom branding and a breathable mesh back for comfort. These hats offer a blend of style and practicality, making them a favorite for outdoor activities and fashion statements.",
+    "price": "₦40,000",
+    "colors": ["Black", "Red", "Blue"],
+    "style": "Basic Trucker Hat",
+    "design": "'M' Monochrome Embroidery",
+    "detail": "Breathable mesh",
+    "size": ["Regular"],
+    "imgs": [
+      "/img/caps/caps-blue.jpg",
+      "/img/caps/caps-red.jpg",
+      "/img/caps/caps-black.jpg"
+    ],
+    "category": "caps"
+  },
+  {
+    "id": 10,
+    "name": "MEMBAZ Male Tank-Top",
+    "description": "Crafted for the modern man, this tank top is where comfort meets style. Made with premium, breathable fabric, it's perfect for a sunny day out or a casual evening with friends. The sleek cut highlights the physique, while the soft material ensures you stay cool as a cucumber, no matter the heat",
+    "price": "₦30,000",
+    "colors": ["Black"],
+    "style": "Classic Tank Top ",
+    "design": "Crew Embroidery",
+    "detail": "Spandex",
+    "size": ["M", "L", "XL"],
+    "imgs": ["/img/male-tank-top/singlet-b.jpg"],
+    "category": "tank tops"
+  },
+  {
+    "id": 11,
+    "name": "MEMBAZ Female Tank-Top",
+    "description": "Elevate your style with our chic crop tops, perfect for any occasion. From casual day-outs to glamorous evenings, our versatile range offers a perfect blend of comfort and fashion. Pair them with high-waisted jeans or a sleek skirt to create a statement look that's all your own.",
+    "price": "₦30,000",
+    "colors": ["Black", "White", "Blue", "Red", "Green"],
+    "style": "Classic stretch fabric Tank Top ",
+    "design": "Crew Embroidery",
+    "detail": "Spandex",
+    "size": ["M", "L", "XL"],
+    "imgs": [
+      "/img/female-tank-top/tanktop-red.jpg",
+      "/img/female-tank-top/tanktop-black.jpg",
+      "/img/female-tank-top/tanktop-green.jpg",
+      "/img/female-tank-top/tanktop-brown.jpg",
+      "/img/female-tank-top/tanktop-blue.jpg"
+    ],
+    "category": "tank tops"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "name": "membaz-site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.2.4",
+    "@iconify-json/entypo-social": "^1.2.1",
+    "@iconify-json/fa6-brands": "^1.2.1",
+    "@iconify-json/fluent": "^1.2.6",
+    "@iconify-json/fontisto": "^1.2.0",
+    "@iconify-json/foundation": "^1.2.0",
+    "@iconify-json/game-icons": "^1.2.0",
+    "@iconify-json/healthicons": "^1.2.1",
+    "@iconify-json/heroicons": "^1.2.1",
+    "@iconify-json/ic": "^1.2.1",
+    "@iconify-json/mage": "^1.2.1",
+    "@iconify-json/material-symbols": "^1.2.6",
+    "@iconify-json/mdi": "^1.2.0",
+    "@iconify-json/mingcute": "^1.2.1",
+    "@iconify-json/ri": "^1.2.3",
+    "@iconify-json/solar": "^1.2.0",
+    "@iconify-json/tdesign": "^1.2.2",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "unplugin-icons": "^0.19.3",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.3.1"
+  }
+}

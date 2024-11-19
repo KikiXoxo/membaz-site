@@ -1,0 +1,36 @@
+@import './variables.css';
+
+button.btn-primary,
+.btn.btn-primary {
+  background: var(--color-primary-dark);
+  color: var(--color-light);
+  border: 2px solid var(--color-primary-dark);
+}
+button.btn-outline,
+.btn.btn-outline {
+  color: var(--color-primary-dark);
+  border: 2px solid var(--color-primary-dark);
+  background: transparent;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.btn-outline:hover {
+  background: var(--color-primary-dark);
+  color: var(--color-light);
+}
+
+input {
+  border: 2px solid var(--color-primary-dark);
+}
+
+.background {
+  color: var(--color-dark);
+  background: var(--color-light);
+}
+
+.text-primary {
+  color: var(--color-primary-dark);
+}
