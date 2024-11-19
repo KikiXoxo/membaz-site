@@ -32,6 +32,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 100%;
+  background-color: white;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     url('@/assets/img/hero-img.PNG') no-repeat 107% 55% / 55%;
 }
@@ -126,6 +127,9 @@ h3 .text-highlight {
 
 /* Mobile Styling */
 @media screen and (max-width: 767px) {
+  header {
+    height: calc(100vh - 55px);
+  }
   .header {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
       url('@/assets/img/hero-img.PNG') no-repeat 50% 340px / 200%;
