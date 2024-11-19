@@ -107,7 +107,7 @@ button {
 
 .spinner {
   margin-top: 40%;
-  margin-left: 50%;
+  margin-left: 40%;
 }
 
 /* LIGHT MODE */
@@ -169,8 +169,8 @@ button {
   }
 
   h3 {
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: 0.95rem;
+    /* font-weight: 400; */
     line-height: 1.1;
     /* text-transform: capitalize; */
     height: 2.7rem;
