@@ -7,9 +7,12 @@
         <!-- Image Gallery -->
         <div class="image-gallery">
           <button class="arrow left-arrow" @click="prevImage">&#10094;</button>
+          <!-- Arrows disabled if images aren't loaded (maintains fixed position with spinner loader) -->
 
           <div class="image-slider">
             <div class="img-container" :style="sliderStyle">
+              <!-- <SpinnerLoader :class="{ hidden: imageLoaded }" /> -->
+
               <img
                 v-for="img in product.imgs"
                 :key="img"
@@ -63,7 +66,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed } from 'vue';
+import { ref, onMounted, watch, computed, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
 import productsData from '../data/data.json';
 
@@ -73,8 +76,27 @@ const currentImageIndex = ref(0);
 
 onMounted(() => {
   window.scrollTo(0, 0); // Reset scroll position
+
+  // Add visibilitychange listener to detect when the tab becomes visible
+  document.addEventListener('visibilitychange', handleVisibilityChange);
 });
 
+// This function will be called when the tab becomes visible again
+const handleVisibilityChange = () => {
+  if (document.visibilityState === 'visible') {
+    nextTick(() => {
+      // Trigger a reflow or recheck images, or any other refresh logic
+      console.log('Tab is visible again. Re-checking images...');
+      // Here you could refresh or trigger image load again.
+      // For example, we could update `product` value to trigger re-render
+      const productId = Number(route.params.id);
+      product.value = productsData.find(item => item.id === productId);
+      currentImageIndex.value = 0; // Reset to the first image
+    });
+  }
+};
+
+// Watch for changes in the route (product ID change)
 watch(
   () => route.params.id,
   () => {
@@ -82,7 +104,7 @@ watch(
     product.value = productsData.find(item => item.id === productId);
     currentImageIndex.value = 0; // Reset to the first image on product change
   },
-  { immediate: true } // Ensures the watch runs immediately on mounted (immediately the component is first created and id is available)
+  { immediate: true }
 );
 
 // Navigation functions
