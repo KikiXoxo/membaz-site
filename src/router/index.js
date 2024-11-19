@@ -22,6 +22,7 @@ const router = createRouter({
       name: 'product-detail',
       component: () => import('@/views/ProductDetail.vue'), // Lazy loading component (instead of standard loading) since it's not a primary view like Home and Store and likely won't be accessed as frequently
       props: true,
+      key: route => route.fullPath, // Forces component remount on route change
 
       // Route Guard (beforeEnter) for when a product with id that doesn't exist is searched for
       beforeEnter: (to, _from, next) => {
