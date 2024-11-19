@@ -66,7 +66,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed } from 'vue';
+import { ref, onMounted, watch, computed, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
 import productsData from '../data/data.json';
 
@@ -76,6 +76,9 @@ const currentImageIndex = ref(0);
 
 onMounted(() => {
   window.scrollTo(0, 0); // Reset scroll position
+
+  // Add event listener for scroll
+  window.addEventListener('scroll', handleScroll);
 });
 
 watch(
@@ -87,6 +90,19 @@ watch(
   },
   { immediate: true } // Ensures the watch runs immediately on mounted (immediately the component is first created and id is available). This is VERY important. So it doesn't matter that id doesn't ever change. We already forcefully triggered watch() once to update product.value, which is the only time we need it
 );
+
+// Scroll handler function
+const handleScroll = () => {
+  // Trigger nextTick to ensure DOM updates properly
+  nextTick(() => {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      if (!img.complete) {
+        img.src = img.src; // Force image reload
+      }
+    });
+  });
+};
 
 // Navigation functions
 const nextImage = () => {
