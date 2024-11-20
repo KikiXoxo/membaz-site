@@ -65,7 +65,7 @@ img:hover {
   scale: 1.12;
   /* opacity: 0.7; */
   /* background-color: rgba(0, 0, 0, 1); */
-  filter: brightness(90%);
+  /* filter: brightness(90%); */
 }
 
 .flex {
