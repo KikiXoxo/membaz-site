@@ -1,6 +1,5 @@
 <template>
   <div class="navbar px-1">
-    <!-- <h1 class="text-primary">MBZ</h1> -->
     <RouterLink to="/">
       <img src="/img/logo.PNG?url" alt="logo" />
     </RouterLink>
@@ -58,6 +57,7 @@ img {
   color: var(--color-primary-light);
 } */
 
+/* Mobile Styling */
 @media screen and (max-width: 767px) {
   .navbar {
     height: 55px;

@@ -17,11 +17,6 @@
   </header>
 </template>
 
-<script setup>
-// import Navbar from './Navbar.vue';
-// import Footer from './Footer.vue';
-</script>
-
 <style scoped>
 header {
   height: calc(100vh - 80px);
@@ -134,23 +129,18 @@ h3 .text-highlight {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
       url('@/assets/img/hero-img.PNG') no-repeat 50% 320px / 200%;
   }
-  .container {
-    /* text-align: center; */
-  }
+
   .container > * {
     width: 100%;
-    /* align-items: center; */
   }
   h1 {
     font-size: 2.65rem;
-    /* font-weight: 600; */
     line-height: 1.1;
   }
 
   h1 .text-highlight {
     font-size: 3rem;
     display: block;
-    /* margin-top: 0.25rem; */
   }
 
   h3 {

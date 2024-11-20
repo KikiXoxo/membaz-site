@@ -163,7 +163,6 @@ const goToProduct = productId => {
 }
 
 .header {
-  /* text-transform: uppercase; */
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
@@ -171,9 +170,8 @@ const goToProduct = productId => {
 }
 
 input {
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 30px;
-  /* border-radius: 5px; */
   border-radius: 8px;
   padding: 0 1rem;
   height: 40px;
@@ -209,10 +207,6 @@ button {
     padding: 0 2rem;
     gap: 1rem;
   }
-
-  input {
-    /* width: 60%; */
-  }
 }
 
 /* Mobile Styling */
@@ -245,9 +239,6 @@ button {
   button {
     margin-right: 1rem;
     margin-bottom: 0.75rem;
-    /* padding-left: 0.75rem; */
-    /* padding-right: 0.75rem; */
-    /* padding-top: 0.5rem; */
     padding: 0.375rem 0.75rem;
     font-size: 0.8rem;
   }

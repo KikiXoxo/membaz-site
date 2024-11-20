@@ -3,9 +3,4 @@
   --color-dark: #111;
   --color-primary-light: rgb(95, 228, 195);
   --color-primary-dark: var(--color-dark);
-  /* --color-primary-dark: rgb(124, 81, 15);
-  --color-primary-dark: rgb(109, 73, 18);
-  --color-primary-dark: rgb(139, 91, 18);
-  --color-primary-dark: rgb(161, 105, 21);
-  --color-primary-dark: rgb(190, 124, 24); */
 }

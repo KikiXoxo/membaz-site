@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home.vue';
 import Store from '@/views/Store.vue';
-import ProductDetail from '@/views/ProductDetail.vue';
 import productsData from '@/data/data.json';
 
 const router = createRouter({
@@ -21,7 +20,7 @@ const router = createRouter({
     {
       path: '/product/:id',
       name: 'product-detail',
-      component: ProductDetail,
+      component: () => import('@/views/ProductDetail.vue'), // Lazy loading component (instead of standard loading) since it's not a primary view like Home and Store and likely won't be accessed as frequently
       props: true,
 
       // Route Guard (beforeEnter) for when a product with id that doesn't exist is searched for

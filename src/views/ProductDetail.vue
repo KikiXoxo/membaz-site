@@ -7,12 +7,9 @@
         <!-- Image Gallery -->
         <div class="image-gallery">
           <button class="arrow left-arrow" @click="prevImage">&#10094;</button>
-          <!-- Arrows disabled if images aren't loaded (maintains fixed position with spinner loader) -->
 
           <div class="image-slider">
             <div class="img-container" :style="sliderStyle">
-              <!-- <SpinnerLoader :class="{ hidden: imageLoaded }" /> -->
-
               <img
                 v-for="img in product.imgs"
                 :key="img"
@@ -146,7 +143,7 @@ h1 {
 }
 
 .img-container img {
-  width: 100%; /* Adjust based on your desired size */
+  width: 100%;
   flex-shrink: 0; /* Prevent images from shrinking */
 }
 
@@ -176,7 +173,6 @@ h1 {
 
 .product-info {
   border: 2.5px solid var(--color-dark);
-  /* border: 2.5px solid #888; */
   padding: 1.5rem 0.75rem;
   flex: 1;
   border-radius: 8px;
@@ -201,14 +197,11 @@ h1 {
 .product-info .size .size-item {
   display: inline-block;
   padding: 0.1rem 1rem;
-  /* width: 50px; */
   text-align: center;
   border: 2px solid var(--color-primary-dark);
   color: var(--color-primary-dark);
   border-radius: 4px;
-  /* font-size: 1rem; */
   cursor: default;
-  /* user-select: none; */
   margin-right: 0.375rem;
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
@@ -233,7 +226,7 @@ h1 {
   margin-left: 50%;
 }
 
-/* iPad and Mobile Styling */
+/* iPad Styling */
 @media screen and (max-width: 1024px) {
   .flex-container {
     gap: 1rem;
@@ -251,7 +244,6 @@ h1 {
   .flex-container {
     flex-direction: column;
   }
-
   .btn {
     width: max-content;
   }

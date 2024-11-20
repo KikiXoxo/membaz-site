@@ -33,13 +33,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* background-color: var(--color-light); */
-  /* background: linear-gradient(to bottom right, var(--color-light), white); */
   color: var(--color-dark);
   border-radius: 8px;
   flex: 1;
   padding: 1rem;
-  /* box-shadow: 2px 2px 5px #e9e9e9; */
 }
 
 svg {
@@ -53,7 +50,7 @@ h4 {
   font-weight: 700;
 }
 
-/* Responsiveness */
+/* iPad and Mobile Styling */
 @media screen and (max-width: 1023px) {
   .brand-features {
     flex-direction: column;

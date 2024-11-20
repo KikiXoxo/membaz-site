@@ -67,7 +67,6 @@ h1 {
 }
 
 img {
-  /* width: 100%; */
   height: 100%;
   object-fit: cover;
 }
@@ -99,8 +98,6 @@ svg {
   width: 30px;
   height: 30px;
 }
-
-/*  */
 .btn.btn-primary {
   background: black;
   color: var(--color-light);
@@ -138,9 +135,6 @@ svg {
 
   .btn.btn-primary {
     width: 100%;
-    /* align-self: end; */
-    /* font-size: 1.1rem; */
-    /* padding: 0.5rem 1.75rem; */
   }
 }
 </style>

@@ -40,22 +40,20 @@ const props = defineProps({
 
 <style scoped>
 .product {
-  /* border-bottom: 1px dashed #747373; */
   padding-bottom: 42px;
-
-  /* Try 2 */
-  border: 2px dashed #666;
   padding: 2rem 1rem 1rem;
   border-radius: 10px;
-  background: #3f3f3f;
+  background: var(--color-light);
+  color: var(--color-dark);
+  border: 1px solid #999;
 }
+
 h3 {
   font-weight: 500;
   padding-bottom: 1rem;
-  /* height: 3rem; */
 }
+
 img {
-  /* width: 100%; */
   height: 100%;
   object-fit: cover;
   transition: all 0.3s ease-in-out;
@@ -63,9 +61,6 @@ img {
 
 img:hover {
   scale: 1.12;
-  /* opacity: 0.7; */
-  /* background-color: rgba(0, 0, 0, 1); */
-  /* filter: brightness(90%); */
 }
 
 .flex {
@@ -78,6 +73,9 @@ img:hover {
 button {
   font-size: 1rem;
   width: 40%;
+  color: var(--color-light);
+  background: black;
+  border: 2px solid black;
 }
 
 .description__price {
@@ -90,15 +88,14 @@ button {
 .icon-price {
   height: 25px;
   width: 25px;
-  color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  color: black;
 }
 
 .img-container {
   overflow: hidden;
-  /* width: 300px; */
   border-radius: 15px;
   height: 400px;
-  /* width: 100%; */
 }
 
 .shop-now {
@@ -108,27 +105,6 @@ button {
 .spinner {
   margin-top: 40%;
   margin-left: 40%;
-}
-
-/* LIGHT MODE */
-.product {
-  background: var(--color-light);
-  color: var(--color-dark);
-  border: 1px solid #999;
-}
-.icon-price {
-  color: var(--color-primary-dark);
-  color: black;
-}
-
-/* LIGHT MODE DARK BUTTONS, dark .products background */
-.btn-primary {
-  background: var(--color-primary-dark);
-  color: var(--color-light);
-  border: 2px solid var(--color-primary-dark);
-
-  background: black;
-  border: 2px solid black;
 }
 
 /* iPad Styling */
@@ -157,10 +133,9 @@ button {
   }
 }
 
+/* Mobile Styling */
 @media screen and (max-width: 767px) {
   .flex {
-    /* flex-direction: column; */
-    /* align-items: flex-end; */
     margin-top: 0.25rem;
   }
 
@@ -170,20 +145,13 @@ button {
 
   h3 {
     font-size: 1rem;
-    /* font-weight: 400; */
     line-height: 1.1;
-    /* text-transform: capitalize; */
     height: 2.6rem;
   }
 
   .img-container {
     border-radius: 8px;
     height: 200px;
-    /* width: 100%; */
-  }
-
-  img {
-    /* object-fit: contain; */
   }
 
   .description__price,
